@@ -26,8 +26,7 @@ class Question
     output = {
       "My tree is coniferous." => 1,
       "My tree is deciduous." => 2,
-      "Get help on this question." => 3,
-      "Return to Main Menu." => 4
+      "Return to Main Menu." => 3
     }
 
     response = @@prompt.select(question, output).to_i
@@ -277,7 +276,7 @@ def self.question_six_conifer
   tree_count = Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).count
   tree_list = Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).pluck(:common_name)
 
-  puts "Your bark is #{bark_color}! There are #{tree_count} trees available."
+  puts "Your bark is #{@@bark_color}! There are #{tree_count} trees available."
   question = "What texture are the tree's twigs?"
   output = {
     "Twigs are smooth." => 1,
@@ -324,6 +323,20 @@ def self.question_six_conifer
     Application.application_runner
   end
   response
+  tree_list = Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs).pluck(:common_name)
+  puts tree_list
+
+  question = "You've reached the end. Return to the main menu?"
+  output = %w(yes exit)
+
+  response = @@prompt.select(question, output)
+
+  if response == "yes"
+      system "clear"
+      Application.application_runner
+  else
+      abort("Thanks for using TreeFind!!!!!!!!!")
+  end
 end
 
 
