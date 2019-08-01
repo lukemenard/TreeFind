@@ -582,17 +582,17 @@ end
     response = @@prompt.select(question, output, per_page: 8).to_i
     case response
     when 1
-      @@twigs = "Smooth"
+      @@twigs_deciduous = "Smooth"
     when 2
-      @@twigs = "Hairy"
+      @@twigs_ = "Hairy"
     when 3
-      @@twigs = "Rough"
+      @@twigs_deciduous = "Rough"
     when 4
-      @@twigs = "Peeling"
+      @@twigs_deciduous = "Peeling"
     when 5
-      @@twigs = "Thorny"
+      @@twigs_deciduous = "Thorny"
     when 6
-      @@twigs = "Sticky"
+      @@twigs_deciduous = "Sticky"
     when 7
       puts ""
       puts ""
@@ -621,10 +621,10 @@ end
     system "clear"
     tty_runner
 
-    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).count
-    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).pluck(:common_name)
+    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).count
+    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).pluck(:common_name)
 
-    puts "Your twigs are #{@@twigs}! There are #{tree_count} trees available."
+    puts "Your twigs are #{@@twigs_deciduous}! There are #{tree_count} trees available."
     question =  "What type of fruit does the tree have?"
     output = {
       "The tree has capsules." => 1,
@@ -647,7 +647,7 @@ end
     when 4
       @@fruit = "Samaras"
     when 5
-      @@fruit = "FLeshy"
+      @@fruit = "Fleshy"
     when 6
       @@fruit = "Cones"
     when 7
@@ -678,8 +678,8 @@ end
     system "clear"
     tty_runner
 
-    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).where("fruit = ?", @@fruit).count
-    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).where("fruit = ?", @@fruit).pluck(:common_name)
+    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).count
+    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).pluck(:common_name)
 
     puts "Your fruits are #{@@fruit}! There are #{tree_count} trees available."
     question =  "What shape are the tree's flowers?"
@@ -735,8 +735,8 @@ end
     system "clear"
     tty_runner
 
-    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).count
-    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).pluck(:common_name)
+    tree_count = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).count
+    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).pluck(:common_name)
 
     puts "Your flowers are #{@@flower_shape}! There are #{tree_count} trees available."
     question =  "What color are the tree's flowers?"
@@ -794,7 +794,7 @@ end
       Application.application_runner
     end
     response
-    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twig_texture).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).where("flower_color = ?", @@flower_color).pluck(:common_name)
+    tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).where("flower_color = ?", @@flower_color).pluck(:common_name)
     puts tree_list
   end
 
