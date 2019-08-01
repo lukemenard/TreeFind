@@ -4,7 +4,7 @@ class Application
 # ____________TITLE_PAGE___________________________
 
 def self.tty_runner
-    @@prompt = TTY::Prompt.new
+    @@prompt = TTY::Prompt.new(symbols:{marker: '🌲'}) 
     @@prompt
 end
 
