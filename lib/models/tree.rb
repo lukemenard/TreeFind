@@ -1,6 +1,6 @@
 
 class Tree < ActiveRecord::Base
-    
+
     has_many :favorites
     has_many :users, through: :favorites
 
@@ -15,7 +15,7 @@ class Tree < ActiveRecord::Base
 
     def self.all_trees
         tty_runner
-        
+
         puts all.pluck(:common_name)
 
         puts "Aren't these trees neat!"
@@ -23,10 +23,10 @@ class Tree < ActiveRecord::Base
         output = %w(yes exit)
 
         response = @@prompt.select(question, output)
-        
+
         if response == "yes"
             system "clear"
-            Application.main_menu
+            Application.application_runner
         else
             abort("Thanks for using TreeFind!!!!!!!!!")
         end

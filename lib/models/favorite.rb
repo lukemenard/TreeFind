@@ -8,26 +8,26 @@ class Favorite < ActiveRecord::Base
     end
 
     def self.select_tree
-        
+
         tty_runner
-    
-        trees = Tree.all.map{ |tree|[tree.common_name, tree.common_name]}.to_h 
-    
+
+        trees = Tree.all.map{ |tree|[tree.common_name, tree.common_name]}.to_h
+
         question = "What tree do you want to add to your favorites?"
         puts " "
         response = @@prompt.select(question, trees)
-        response 
-    
+        response
+
     end
 
     def self.add_to_favorites
-    
+
         response = select_tree
         user = Application.return_username
         tree = Tree.find_by(common_name: response)
         create(user:user, tree:tree)
         system "clear"
-        # Application.main_menu
+        Application.application_runner
     end
 
     def self.show_favorites
@@ -44,16 +44,13 @@ class Favorite < ActiveRecord::Base
         output = %w(yes exit)
 
         response = @@prompt.select(question, output)
-        
+
         if response == "yes"
             system "clear"
-            Application.main_menu
+            Application.application_runner
         else
             abort("Thanks for using TreeFind!!!!!!!!!")
         end
     end
 
 end
-
-
-

@@ -10,7 +10,9 @@ end
 
 def self.get_username
   tty_runner
+  system "clear"
 
+  # Animation.title_animation
   puts "Hello! Welcome to TreeFind!".white.on_green
   system("imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
@@ -41,55 +43,53 @@ def self.return_username
 end
 
 def self.application_runner
-  
-  # main_menu
 
-  response_main_menu = Application.main_menu
-  Application.main_menu_response(response_main_menu)
+  response_main_menu = main_menu
+  main_menu_response(response_main_menu)
 
   response_question_one = Question.question_one
-  Application.question_one_response(response_question_one)
+  question_one_response(response_question_one)
 
   if response_question_one == 1
     response_question_two_conifer = Question.question_two_conifer
-    Application.question_two_conifer_response(response_question_two_conifer)
+    question_two_conifer_response(response_question_two_conifer)
 
     response_question_three_conifer = Question.question_three_conifer
-    Application.question_three_conifer_response(response_question_three_conifer)
+    question_three_conifer_response(response_question_three_conifer)
 
     response_question_four_conifer = Question.question_four_conifer
-    Application.question_four_conifer_response(response_question_four_conifer)
+    question_four_conifer_response(response_question_four_conifer)
 
     response_question_five_conifer = Question.question_five_conifer
-    Application.question_five_conifer_response(response_question_five_conifer)
+    question_five_conifer_response(response_question_five_conifer)
 
     response_question_six_conifer = Question.question_six_conifer
-    Application.question_six_conifer_response(response_question_six_conifer)
+    question_six_conifer_response(response_question_six_conifer)
 
   elsif response_question_one == 2
     response_question_two_deciduous = Question.question_two_deciduous
-    Application.question_two_deciduous_response(response_question_two_deciduous)
+    question_two_deciduous_response(response_question_two_deciduous)
 
     response_question_three_deciduous = Question.question_three_deciduous
-    Application.question_three_deciduous_response(response_question_three_deciduous)
+    question_three_deciduous_response(response_question_three_deciduous)
 
     response_question_four_deciduous = Question.question_four_deciduous
-    Application.question_four_deciduous_response(response_question_four_deciduous)
+    question_four_deciduous_response(response_question_four_deciduous)
 
     response_question_five_deciduous = Question.question_five_deciduous
-    Application.question_five_deciduous_response(response_question_five_deciduous)
+    question_five_deciduous_response(response_question_five_deciduous)
 
     response_question_six_deciduous = Question.question_six_deciduous
-    Application.question_six_deciduous_response(response_question_six_deciduous)
+    question_six_deciduous_response(response_question_six_deciduous)
 
     response_question_seven_deciduous = Question.question_seven_deciduous
-    Application.question_seven_deciduous_response(response_question_seven_deciduous)
+    question_seven_deciduous_response(response_question_seven_deciduous)
 
     response_question_eight_deciduous = Question.question_eight_deciduous
-    Application.question_eight_deciduous_response(response_question_eight_deciduous)
+    question_eight_deciduous_response(response_question_eight_deciduous)
 
     response_question_nine_deciduous = Question.question_nine_deciduous
-    Application.question_nine_deciduous_response(response_question_nine_deciduous)
+    question_nine_deciduous_response(response_question_nine_deciduous)
   end
 end
 
@@ -124,8 +124,6 @@ end
       Favorite.show_favorites
     when 5
       Help.main_menu_help
-    else
-      puts "Please enter a number between 1 and 4"
     end
   end
 
@@ -139,12 +137,7 @@ end
     when 2
       @@type = "deciduous"
     when 3
-      Help.list_trees_by_characteristics
-    when 4
-      self.main_menu
-    else
-      puts "Please enter a number between 1 and 4"
-      question_one_response(response)
+      application_runner
     end
   end
 
@@ -169,9 +162,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 6"
-      question_two_conifer_response(response)
     end
   end
 
@@ -191,9 +181,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = 'Coniferous'").where("needle_shape = ?", @@needles).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 4"
-      question_three_conifer_response(response)
     end
   end
 
@@ -215,9 +202,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 6"
-      question_four_conifer_response(response)
     end
   end
 
@@ -238,9 +222,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 5"
-      question_five_conifer_response(response)
     end
   end
 
@@ -264,9 +245,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 7"
-      question_six_conifer_response(response)
     end
   end
 
@@ -288,9 +266,6 @@ end
       puts ""
       puts ""
       puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
-    else
-      puts "Please enter a number between 1 and 5"
-      question_two_deciduous_response(response)
     end
   end
 
@@ -315,9 +290,6 @@ end
       @@leaf_shape = "Lobed"
     when 8
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 8"
-      question_three_deciduous_response(response)
     end
   end
 
@@ -337,9 +309,6 @@ end
       @@bark_texture = "Peeling"
     when 6
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 6"
-      question_four_deciduous_response(response)
     end
   end
 
@@ -358,9 +327,6 @@ end
       @@bark_color = "red-brown"
     when 5
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 5"
-      question_five_deciduous_response(response)
     end
   end
 
@@ -382,9 +348,6 @@ end
       @@twigs = "Sticky"
     when 7
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 7"
-      question_six_deciduous_response(response)
     end
   end
 
@@ -407,9 +370,6 @@ end
       @@fruit = "Cones"
     when 7
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 7"
-      question_seven_deciduous_response(response)
     end
   end
 
@@ -432,9 +392,6 @@ end
       @@flower_shape = "Other"
     when 7
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 7"
-      question_eight_deciduous_response(response)
     end
   end
 
@@ -462,9 +419,6 @@ end
       @@flower_color = "Pink"
     when 10
       Help.list_all_trees
-    else
-      puts "Please enter a number between 1 and 10"
-      question_nine_deciduous_response(response)
     end
   end
 end
