@@ -21,7 +21,6 @@ class Favorite < ActiveRecord::Base
     end
 
     def self.add_to_favorites
-
         response = select_tree
         user = Application.return_username
         tree = Tree.find_by(common_name: response)
@@ -29,6 +28,16 @@ class Favorite < ActiveRecord::Base
         system "clear"
         Application.application_runner
     end
+
+    def self.add_to_favorites_from_list(response)
+      user = Application.return_username
+      tree = Tree.find_by(common_name: response)
+      create(user:user, tree:tree)
+      system "clear"
+      Application.application_runner
+    end
+
+
 
     def self.show_favorites
        tty_runner

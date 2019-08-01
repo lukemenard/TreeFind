@@ -80,21 +80,20 @@ class Question
     when 5
       @@needles = "Scaled"
     when 6
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output, per_page: 7)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_two_conifer
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 7
       Application.application_runner
@@ -133,21 +132,20 @@ def self.question_three_conifer
   when 3
     @@cones = "Berry"
   when 4
-    puts ""
-    puts ""
-    puts tree_list
 
-    question = "What do you want to do?"
-    output = ["Return to Main Menu.", "Return to the question."]
+    question = "Do you want to save a tree to your favorites?"
+    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-    response = @@prompt.select(question, output)
+    response = @@prompt.select(question, output, per_page:15)
 
     if response == "Return to Main Menu."
         system "clear"
         Application.application_runner
-    else
+    elsif response == "No. Return to the question."
         system "clear"
         question_three_conifer
+    else
+      Favorite.add_to_favorites_from_list(response)
     end
   when 5
     Application.application_runner
@@ -192,21 +190,20 @@ def self.question_four_conifer
   when 5
     @@bark_texture = "Peeling"
   when 6
-    puts ""
-    puts ""
-    puts tree_list
 
     question = "What do you want to do?"
-    output = ["Return to Main Menu.", "Return to the question."]
+    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-    response = @@prompt.select(question, output)
+    response = @@prompt.select(question, output, per_page:15)
 
     if response == "Return to Main Menu."
         system "clear"
         Application.application_runner
-    else
+    elsif response == "No. Return to the question."
         system "clear"
-        question_four_conifer
+        question_three_conifer
+    else
+      Favorite.add_to_favorites_from_list(response)
     end
   when 7
     Application.application_runner
@@ -245,21 +242,20 @@ def self.question_five_conifer
   when 4
     @@bark_color = "red-brown"
   when 5
-    puts ""
-    puts ""
-    puts tree_list
 
     question = "What do you want to do?"
-    output = ["Return to Main Menu.", "Return to the question."]
+    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-    response = @@prompt.select(question, output)
+    response = @@prompt.select(question, output, per_page:15)
 
     if response == "Return to Main Menu."
         system "clear"
         Application.application_runner
-    else
+    elsif response == "No. Return to the question."
         system "clear"
-        question_five_conifer
+        question_three_conifer
+    else
+      Favorite.add_to_favorites_from_list(response)
     end
   when 6
     Application.application_runner
@@ -303,21 +299,20 @@ def self.question_six_conifer
   when 6
     @@twigs = "Sticky"
   when 7
-    puts ""
-    puts ""
-    puts tree_list
 
     question = "What do you want to do?"
-    output = ["Return to Main Menu.", "Return to the question."]
+    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-    response = @@prompt.select(question, output)
+    response = @@prompt.select(question, output, per_page:15)
 
     if response == "Return to Main Menu."
         system "clear"
         Application.application_runner
-    else
+    elsif response == "No. Return to the question."
         system "clear"
-        question_six_conifer
+        question_three_conifer
+    else
+      Favorite.add_to_favorites_from_list(response)
     end
   when 8
     Application.application_runner
@@ -377,21 +372,20 @@ end
     when 4
       @@leaves = "Basal"
     when 5
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_two_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 6
       Application.application_runner
@@ -439,21 +433,20 @@ end
     when 7
       @@leaf_shape = "Lobed"
     when 8
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_three_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 9
       Application.application_runner
@@ -496,21 +489,20 @@ end
     when 5
       @@bark_texture = "Peeling"
     when 6
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_four_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 7
       Application.application_runner
@@ -549,21 +541,20 @@ end
     when 4
       @@bark_color = "red-brown"
     when 5
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_five_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 6
       Application.application_runner
@@ -607,21 +598,20 @@ end
     when 6
       @@twigs_deciduous = "Sticky"
     when 7
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_six_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 8
       Application.application_runner
@@ -664,21 +654,20 @@ end
     when 6
       @@fruit = "Cones"
     when 7
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_seven_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 8
       Application.application_runner
@@ -721,21 +710,20 @@ end
     when 6
       @@flower_shape = "Other"
     when 7
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
-      output = ["Return to Main Menu.", "Return to the question."]
+      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
-      response = @@prompt.select(question, output)
+      response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      else
+      elsif response == "No. Return to the question."
           system "clear"
-          question_eight_deciduous
+          question_three_conifer
+      else
+        Favorite.add_to_favorites_from_list(response)
       end
     when 8
       Application.application_runner
@@ -787,9 +775,6 @@ end
     when 9
       @@flower_color = "Pink"
     when 10
-      puts ""
-      puts ""
-      puts tree_list
 
       question = "What do you want to do?"
       output = ["Return to Main Menu.", "Return to the question."]
