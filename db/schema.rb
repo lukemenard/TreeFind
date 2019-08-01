@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_07_31_003325) do
     t.string "flower_shape"
     t.string "flower_color"
     t.string "habitat"
+    t.string "leaf_picture"
+    t.string "tree_picture"
   end
 
   create_table "users", force: :cascade do |t|

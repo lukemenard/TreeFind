@@ -21,6 +21,8 @@ class CreateTreesTable < ActiveRecord::Migration[5.2]
       t.string :flower_shape
       t.string :flower_color
       t.string :habitat
+      t.string :leaf_picture
+      t.string :tree_picture
     end
   end
 end
