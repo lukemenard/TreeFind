@@ -12,7 +12,8 @@ def self.get_username
   tty_runner
   system "clear"
 
-  Animation.title_animation
+  # Animation.title_animation
+
   puts "Hello! Welcome to TreeFind!".white.on_green
   system("imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
@@ -112,10 +113,10 @@ end
 
   def self.main_menu_response(response)
     case response
-    when 1
-      unless
-        ""
-      end
+    # when 1
+    #   unless
+    #     "hold"
+    #   end
     when 2
       Tree.all_trees
     when 3

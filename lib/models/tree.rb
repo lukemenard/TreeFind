@@ -17,9 +17,9 @@ class Tree < ActiveRecord::Base
         output = Tree.all.map(&:common_name)
         tree = @@prompt.select(question, output, per_page: 10)
     
-        @@tree = Tree.find_by(user_name: tree)
+        @@tree = Tree.find_by(common_name: tree)
         
-        # puts all.pluck(:common_name)
+        tree_info
     
         puts "Aren't these trees neat!"
         question = "Return to Main Menu?"
@@ -33,5 +33,12 @@ class Tree < ActiveRecord::Base
         else
             abort("Thanks for using TreeFind!!!!!!!!!")
         end
+    end
+
+    def self.tree_info
+        system "clear"
+        puts "The #{@@tree.common_name} tree has the scientific name #{@@tree.sci_name}, and looks like this:"
+        system("#{@@tree.tree_picture}")
+        puts ""
     end
 end
