@@ -79,6 +79,13 @@ class Question
       @@needles = "Sharp"
     when 5
       @@needles = "Scaled"
+    when 6
+      puts ""
+      puts ""
+      puts tree_list
+    else
+      puts "Please enter a number between 1 and 6"
+      question_two_conifer_response(response)
     end
     response
   end

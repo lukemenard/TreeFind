@@ -39,6 +39,58 @@ def self.return_username
   @@user
 end
 
+def self.application_runner
+  get_username
+
+  response_main_menu = Application.main_menu
+  Application.main_menu_response(response_main_menu)
+
+  response_question_one = Question.question_one
+  Application.question_one_response(response_question_one)
+
+  if response_question_one == 1
+    response_question_two_conifer = Question.question_two_conifer
+    # Application.question_two_conifer_response(response_question_two_conifer)
+
+    response_question_three_conifer = Question.question_three_conifer
+    Application.question_three_conifer_response(response_question_three_conifer)
+
+    response_question_four_conifer = Question.question_four_conifer
+    Application.question_four_conifer_response(response_question_four_conifer)
+
+    response_question_five_conifer = Question.question_five_conifer
+    Application.question_five_conifer_response(response_question_five_conifer)
+
+    response_question_six_conifer = Question.question_six_conifer
+    Application.question_six_conifer_response(response_question_six_conifer)
+
+  elsif response_question_one == 2
+    response_question_two_deciduous = Question.question_two_deciduous
+    Application.question_two_deciduous_response(response_question_two_deciduous)
+
+    response_question_three_deciduous = Question.question_three_deciduous
+    Application.question_three_deciduous_response(response_question_three_deciduous)
+
+    response_question_four_deciduous = Question.question_four_deciduous
+    Application.question_four_deciduous_response(response_question_four_deciduous)
+
+    response_question_five_deciduous = Question.question_five_deciduous
+    Application.question_five_deciduous_response(response_question_five_deciduous)
+
+    response_question_six_deciduous = Question.question_six_deciduous
+    Application.question_six_deciduous_response(response_question_six_deciduous)
+
+    response_question_seven_deciduous = Question.question_seven_deciduous
+    Application.question_seven_deciduous_response(response_question_seven_deciduous)
+
+    response_question_eight_deciduous = Question.question_eight_deciduous
+    Application.question_eight_deciduous_response(response_question_eight_deciduous)
+
+    response_question_nine_deciduous = Question.question_nine_deciduous
+    Application.question_nine_deciduous_response(response_question_nine_deciduous)
+  end
+end
+
 
 # ____________MAIN_MENU___________________________
 
@@ -90,7 +142,7 @@ end
       self.main_menu
     else
       puts "Please enter a number between 1 and 4"
-      self.question_one_response
+      question_one_response(response)
     end
   end
 
@@ -117,7 +169,7 @@ end
       puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 6"
-      self.question_two_conifer_response
+      question_two_conifer_response(response)
     end
   end
 
@@ -139,7 +191,7 @@ end
       puts Tree.all.where("coniferous_deciduous = 'Coniferous'").where("needle_shape = ?", @@needles).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 4"
-      self.question_three_conifer_response
+      question_three_conifer_response(response)
     end
   end
 
@@ -163,7 +215,7 @@ end
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 6"
-      self.question_four_conifer_response
+      question_four_conifer_response(response)
     end
   end
 
@@ -186,7 +238,7 @@ end
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 5"
-      self.question_five_conifer_response
+      question_five_conifer_response(response)
     end
   end
 
@@ -212,7 +264,7 @@ end
       puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 7"
-      self.question_six_conifer_response
+      question_six_conifer_response(response)
     end
   end
 
@@ -236,7 +288,7 @@ end
       puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 5"
-      self.question_two_deciduous_response
+      question_two_deciduous_response(response)
     end
   end
 
@@ -263,7 +315,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 8"
-      self.question_three_deciduous_response
+      question_three_deciduous_response(response)
     end
   end
 
@@ -285,7 +337,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 6"
-      self.question_four_deciduous_response
+      question_four_deciduous_response(response)
     end
   end
 
@@ -306,7 +358,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 5"
-      self.question_five_deciduous_response
+      question_five_deciduous_response(response)
     end
   end
 
@@ -330,7 +382,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 7"
-      self.question_six_deciduous_response
+      question_six_deciduous_response(response)
     end
   end
 
@@ -355,7 +407,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 7"
-      self.question_seven_deciduous_response
+      question_seven_deciduous_response(response)
     end
   end
 
@@ -380,7 +432,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 7"
-      self.question_eight_deciduous_response
+      question_eight_deciduous_response(response)
     end
   end
 
@@ -410,7 +462,7 @@ end
       Help.list_all_trees
     else
       puts "Please enter a number between 1 and 10"
-      self.question_nine_deciduous_response
+      question_nine_deciduous_response(response)
     end
   end
 end
