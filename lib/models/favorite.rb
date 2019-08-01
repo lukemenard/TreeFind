@@ -27,7 +27,7 @@ class Favorite < ActiveRecord::Base
         tree = Tree.find_by(common_name: response)
         create(user:user, tree:tree)
         system "clear"
-        Application.main_menu
+        # Application.main_menu
     end
 
     def self.show_favorites

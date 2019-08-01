@@ -10,5 +10,5 @@ ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/trees.
 ActiveRecord::Base.logger = nil
 
 # system "clear"
-
-# Application.application_runner
+Application.get_username
+Application.application_runner

@@ -12,6 +12,7 @@ def self.get_username
   tty_runner
 
   puts "Hello! Welcome to TreeFind!".white.on_green
+  system("imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
 
   question = "Have you logged in before?"
@@ -40,7 +41,8 @@ def self.return_username
 end
 
 def self.application_runner
-  get_username
+  
+  # main_menu
 
   response_main_menu = Application.main_menu
   Application.main_menu_response(response_main_menu)
@@ -50,7 +52,7 @@ def self.application_runner
 
   if response_question_one == 1
     response_question_two_conifer = Question.question_two_conifer
-    # Application.question_two_conifer_response(response_question_two_conifer)
+    Application.question_two_conifer_response(response_question_two_conifer)
 
     response_question_three_conifer = Question.question_three_conifer
     Application.question_three_conifer_response(response_question_three_conifer)
