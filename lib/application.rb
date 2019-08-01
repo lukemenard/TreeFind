@@ -81,9 +81,9 @@ end
   def self.question_one_response(response)
     case response
     when 1
-      type = "coniferous"
+      @@type = "coniferous"
     when 2
-      type = "deciduous"
+      @@type = "deciduous"
     when 3
       Help.list_trees_by_characteristics
     when 4
@@ -102,19 +102,19 @@ end
   def self.question_two_conifer_response (response)
     case response
     when 1
-      needles = "Clusters of 2-3"
+      @@needles = "Clusters of 2-3"
     when 2
-      needles = "Clusters of 5"
+      @@needles = "Clusters of 5"
     when 3
-      needles = "Flat"
+      @@needles = "Flat"
     when 4
-      needles = "Sharp"
+      @@needles = "Sharp"
     when 5
-      needles = "Scaled"
+      @@needles = "Scaled"
     when 6
       puts ""
       puts ""
-      puts Tree.all.where("coniferous_deciduous = 'Coniferous'").pluck(:common_name)
+      puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 6"
       self.question_two_conifer_response
@@ -128,13 +128,15 @@ end
   def self.question_three_conifer_response (response)
     case response
     when 1
-      cones = "Woody"
+      @@cones = "Woody"
     when 2
-      cones = "Papery"
+      @@cones = "Papery"
     when 3
-      cones = "Berry"
+      @@cones = "Berry"
     when 4
-      Help.list_all_trees
+      puts ""
+      puts ""
+      puts Tree.all.where("coniferous_deciduous = 'Coniferous'").where("needle_shape = ?", @@needles).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 4"
       self.question_three_conifer_response
@@ -146,17 +148,19 @@ end
   def self.question_four_conifer_response (response)
     case response
     when 1
-      bark_texture = "Smooth"
+      @@bark_texture = "Smooth"
     when 2
-      bark_texture = "Bumpy"
+      @@bark_texture = "Bumpy"
     when 3
-      bark_texture = "Furrowed"
+      @@bark_texture = "Furrowed"
     when 4
-      bark_texture = "Scaled"
+      @@bark_texture = "Scaled"
     when 5
-      bark_texture = "Peeling"
+      @@bark_texture = "Peeling"
     when 6
-      Help.list_all_trees
+      puts ""
+      puts ""
+      puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 6"
       self.question_four_conifer_response
@@ -169,15 +173,17 @@ end
   def self.question_five_conifer_response (response)
     case response
     when 1
-      bark_color = "brown"
+      @@bark_color = "brown"
     when 2
-      bark_color = "gray-brown"
+      @@bark_color = "gray-brown"
     when 3
-      bark_color = "gray"
+      @@bark_color = "gray"
     when 4
-      bark_color = "red-brown"
+      @@bark_color = "red-brown"
     when 5
-      Help.list_all_trees
+      puts ""
+      puts ""
+      puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 5"
       self.question_five_conifer_response
@@ -189,19 +195,21 @@ end
   def self.question_six_conifer_response (response)
     case response
     when 1
-      twigs = "Smooth"
+      @@twigs = "Smooth"
     when 2
-      twigs = "Hairy"
+      @@twigs = "Hairy"
     when 3
-      twigs = "Rough"
+      @@twigs = "Rough"
     when 4
-      twigs = "Peeling"
+      @@twigs = "Peeling"
     when 5
-      twigs = "Thorny"
+      @@twigs = "Thorny"
     when 6
-      twigs = "Sticky"
+      @@twigs = "Sticky"
     when 7
-      Help.list_all_trees
+      puts ""
+      puts ""
+      puts Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 7"
       self.question_six_conifer_response
@@ -215,17 +223,17 @@ end
   def self.question_two_deciduous_response (response)
     case response
     when 1
-      leaves = "Opposite"
+      @@leaves = "Opposite"
     when 2
-      leaves = "Alternate"
+      @@leaves = "Alternate"
     when 3
-      leaves = "Whorled"
+      @@leaves = "Whorled"
     when 4
-      leaves = "Basal"
+      @@leaves = "Basal"
     when 5
       puts ""
       puts ""
-      puts Tree.all.where("coniferous_deciduous = 'Deciduous'").pluck(:common_name)
+      puts Tree.all.where("coniferous_deciduous = ?", @@type).pluck(:common_name)
     else
       puts "Please enter a number between 1 and 5"
       self.question_two_deciduous_response
@@ -238,19 +246,19 @@ end
   def self.question_three_deciduous_response (response)
     case response
     when 1
-      leaf_shape = "Pinnate"
+      @@leaf_shape = "Pinnate"
     when 2
-      leaf_shape = "Narrow"
+      @@leaf_shape = "Narrow"
     when 3
-      leaf_shape = "Deltoid"
+      @@leaf_shape = "Deltoid"
     when 4
-      leaf_shape = "Orbicular"
+      @@leaf_shape = "Orbicular"
     when 5
-      leaf_shape = "Oblanceolate"
+      @@leaf_shape = "Oblanceolate"
     when 6
-      leaf_shape = "Palmate"
+      @@leaf_shape = "Palmate"
     when 7
-      leaf_shape = "Lobed"
+      @@leaf_shape = "Lobed"
     when 8
       Help.list_all_trees
     else
@@ -264,15 +272,15 @@ end
   def self.question_four_deciduous_response (response)
     case response
     when 1
-      bark_texture = "Smooth"
+      @@bark_texture = "Smooth"
     when 2
-      bark_texture = "Bumpy"
+      @@bark_texture = "Bumpy"
     when 3
-      bark_texture = "Furrowed"
+      @@bark_texture = "Furrowed"
     when 4
-      bark_texture = "Scaled"
+      @@bark_texture = "Scaled"
     when 5
-      bark_texture = "Peeling"
+      @@bark_texture = "Peeling"
     when 6
       Help.list_all_trees
     else
@@ -287,13 +295,13 @@ end
   def self.question_five_deciduous_response (response)
     case response
     when 1
-      bark_color = "brown"
+      @@bark_color = "brown"
     when 2
-      bark_color = "gray-brown"
+      @@bark_color = "gray-brown"
     when 3
-      bark_color = "gray"
+      @@bark_color = "gray"
     when 4
-      bark_color = "red-brown"
+      @@bark_color = "red-brown"
     when 5
       Help.list_all_trees
     else
@@ -307,17 +315,17 @@ end
   def self.question_six_deciduous_response (response)
     case response
     when 1
-      twigs = "Smooth"
+      @@twigs = "Smooth"
     when 2
-      twigs = "Hairy"
+      @@twigs = "Hairy"
     when 3
-      twigs = "Rough"
+      @@twigs = "Rough"
     when 4
-      twigs = "Peeling"
+      @@twigs = "Peeling"
     when 5
-      twigs = "Thorny"
+      @@twigs = "Thorny"
     when 6
-      twigs = "Sticky"
+      @@twigs = "Sticky"
     when 7
       Help.list_all_trees
     else
@@ -332,17 +340,17 @@ end
   def self.question_seven_deciduous_response (response)
     case response
     when 1
-      fruit = "Capsules"
+      @@fruit = "Capsules"
     when 2
-      fruit = "Dry Seed"
+      @@fruit = "Dry Seed"
     when 3
-      fruit = "Acorns"
+      @@fruit = "Acorns"
     when 4
-      fruit = "Samaras"
+      @@fruit = "Samaras"
     when 5
-      fruit = "FLeshy"
+      @@fruit = "FLeshy"
     when 6
-      fruit = "Cones"
+      @@fruit = "Cones"
     when 7
       Help.list_all_trees
     else
@@ -357,17 +365,17 @@ end
   def self.question_eight_deciduous_response (response)
     case response
     when 1
-      flower_shape = "Inconspicuous"
+      @@flower_shape = "Inconspicuous"
     when 2
-      flower_shape = "Round"
+      @@flower_shape = "Round"
     when 3
-      flower_shape = "Star or Cross Shaped"
+      @@flower_shape = "Star or Cross Shaped"
     when 4
-      flower_shape = "Bell-Shaped"
+      @@flower_shape = "Bell-Shaped"
     when 5
-      flower_shape = "Cup-Shaped"
+      @@flower_shape = "Cup-Shaped"
     when 6
-      flower_shape = "Other"
+      @@flower_shape = "Other"
     when 7
       Help.list_all_trees
     else
@@ -381,23 +389,23 @@ end
   def self.question_nine_deciduous_response (response)
     case response
     when 1
-      flower_color = "Yellow"
+      @@flower_color = "Yellow"
     when 2
-      flower_color = "Red"
+      @@flower_color = "Red"
     when 3
-      flower_color = "White"
+      @@flower_color = "White"
     when 4
-      flower_color = "Orange"
+      @@flower_color = "Orange"
     when 5
-      flower_color = "Purple"
+      @@flower_color = "Purple"
     when 6
-      flower_color = "Blue"
+      @@flower_color = "Blue"
     when 7
-      flower_color = "Brown"
+      @@flower_color = "Brown"
     when 8
-      flower_color = "Green"
+      @@flower_color = "Green"
     when 9
-      flower_color = "Pink"
+      @@flower_color = "Pink"
     when 10
       Help.list_all_trees
     else
