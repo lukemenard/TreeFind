@@ -20,7 +20,9 @@ blue_spruce = Tree.create(common_name: "Blue Spruce",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "foothills/montane"
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
                     )         
                     
 boxelder = Tree.create(common_name: "Boxelder", 
@@ -42,8 +44,10 @@ boxelder = Tree.create(common_name: "Boxelder",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "Green",
-                    habitat: "plains/foothills"
-                    )        
+                    habitat: "plains/foothills",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
+                )        
                     
 bristlecone_pine = Tree.create(common_name: "Bristlecone Pine", 
                     common_fam_name: "Pine", 
@@ -64,8 +68,10 @@ bristlecone_pine = Tree.create(common_name: "Bristlecone Pine",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane/subalpine"
-                    )       
+                    habitat: "montane/subalpine",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
+                )       
                     
 chokecherry = Tree.create(common_name: "Chokecherry", 
                     common_fam_name: "Rose", 
@@ -86,8 +92,10 @@ chokecherry = Tree.create(common_name: "Chokecherry",
                     twig_texture: "Smooth",
                     flower_shape: "Star or Cross Shaped",
                     flower_color: "White",
-                    habitat: "plains/foothills"
-                    )     
+                    habitat: "plains/foothills",
+                   leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 douglas_fur = Tree.create(common_name: "Douglas Fir", 
                     common_fam_name: "Pine", 
@@ -108,8 +116,10 @@ douglas_fur = Tree.create(common_name: "Douglas Fir",
                     twig_texture: "Rough",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "foothills/montane"
-                    )   
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"   
+                )   
                     
 engelmann_spruce = Tree.create(common_name: "Engelmann Spruce", 
                     common_fam_name: "Pine", 
@@ -130,8 +140,10 @@ engelmann_spruce = Tree.create(common_name: "Engelmann Spruce",
                     twig_texture: "Hairy",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane/subalpine"
-                    )     
+                    habitat: "montane/subalpine",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 gambel_oak = Tree.create(common_name: "Gambel Oak", 
                     common_fam_name: "Oak", 
@@ -153,7 +165,9 @@ gambel_oak = Tree.create(common_name: "Gambel Oak",
                     flower_shape: "Inconspicuous",
                     flower_color: "Green",
                     habitat: "foothills",
-                    )     
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 limber_pine = Tree.create(common_name: "Limber Pine", 
                     common_fam_name: "Pine", 
@@ -174,8 +188,10 @@ limber_pine = Tree.create(common_name: "Limber Pine",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane/subalpine"
-                    )     
+                    habitat: "montane/subalpine",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 lodgepole_pine = Tree.create(common_name: "Lodgepole Pine", 
                     common_fam_name: "Pine", 
@@ -196,8 +212,10 @@ lodgepole_pine = Tree.create(common_name: "Lodgepole Pine",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane/subalpine"
-                    )     
+                    habitat: "montane/subalpine",
+                   leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 narrowleaf_cottonwood = Tree.create(common_name: "Narrowleaf Cottonwood", 
                     common_fam_name: "Willow", 
@@ -218,8 +236,10 @@ narrowleaf_cottonwood = Tree.create(common_name: "Narrowleaf Cottonwood",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "Red",
-                    habitat: "foothills/montane"
-                    )    
+                    habitat: "foothills/montane",
+                  leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"  
+                )    
                     
                     
 peachleaf_willow = Tree.create(common_name: "Peachleaf Willow", 
@@ -241,8 +261,10 @@ peachleaf_willow = Tree.create(common_name: "Peachleaf Willow",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "Yellow",
-                    habitat: "foothills/montane"
-                    )         
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
+                )         
                     
 pinyon_pine = Tree.create(common_name: "Pinyon Pine", 
                     common_fam_name: "Pine", 
@@ -263,8 +285,10 @@ pinyon_pine = Tree.create(common_name: "Pinyon Pine",
                     twig_texture: "Rough",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "foothills/montane"
-                    )        
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
+                )        
                     
 plains_cottonwood = Tree.create(common_name: "Plains Cottonwood", 
                     common_fam_name: "Willow", 
@@ -285,8 +309,10 @@ plains_cottonwood = Tree.create(common_name: "Plains Cottonwood",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "Red",
-                    habitat: "lower river valleys"
-                    )       
+                    habitat: "lower river valleys",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"
+                )       
                     
 ponderosa_pine = Tree.create(common_name: "Ponderosa Pine", 
                     common_fam_name: "Pine", 
@@ -307,8 +333,10 @@ ponderosa_pine = Tree.create(common_name: "Ponderosa Pine",
                     twig_texture: "Rough",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "foothills/montane"
-                    )     
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 quaking_aspen = Tree.create(common_name: "Quaking Aspen", 
                     common_fam_name: "Willow", 
@@ -329,8 +357,10 @@ quaking_aspen = Tree.create(common_name: "Quaking Aspen",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "White",
-                    habitat: "foothills/montane"
-                    )   
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"   
+                )   
                     
 rocky_mountain_maple = Tree.create(common_name: "Rocky Mountain Maple", 
                     common_fam_name: "Maple", 
@@ -351,8 +381,10 @@ rocky_mountain_maple = Tree.create(common_name: "Rocky Mountain Maple",
                     twig_texture: "Smooth",
                     flower_shape: "Other",
                     flower_color: "Yellow",
-                    habitat: "foothills/montane"
-                    )     
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 rocky_mountain_juniper = Tree.create(common_name: "Rocky Mountan Juniper", 
                     common_fam_name: "Cypress", 
@@ -373,8 +405,10 @@ rocky_mountain_juniper = Tree.create(common_name: "Rocky Mountan Juniper",
                     twig_texture: "Peeling",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "foothills/montane"
-                    )     
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 subalpine_fir = Tree.create(common_name: "Subalpine Fir", 
                     common_fam_name: "Pine", 
@@ -395,8 +429,10 @@ subalpine_fir = Tree.create(common_name: "Subalpine Fir",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane/subalpine"
-                    )     
+                    habitat: "montane/subalpine",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 thinleaf_alder = Tree.create(common_name: "Thinleaf Alder", 
                     common_fam_name: "Birch", 
@@ -417,8 +453,10 @@ thinleaf_alder = Tree.create(common_name: "Thinleaf Alder",
                     twig_texture: "Smooth",
                     flower_shape: "Inconspicuous",
                     flower_color: "Red",
-                    habitat: "montane"
-                    )     
+                    habitat: "montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                )     
 
 white_fir = Tree.create(common_name: "White Fir", 
                     common_fam_name: "Pine", 
@@ -439,6 +477,8 @@ white_fir = Tree.create(common_name: "White Fir",
                     twig_texture: "Smooth",
                     flower_shape:"none",
                     flower_color:"none",
-                    habitat: "montane"
-                    )    
+                    habitat: "montane",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg" 
+                 )    
   
