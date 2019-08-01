@@ -9,24 +9,27 @@ class Tree < ActiveRecord::Base
         @@prompt
     end
 
-    def self.tall_trees
-        where("min_height > ?", 50).pluck(:common_name)
-    end
-
     def self.all_trees
         tty_runner
-
-        puts all.pluck(:common_name)
-
+    
+    
+        question = "Select a tree for more information."
+        output = Tree.all.map(&:common_name)
+        tree = @@prompt.select(question, output, per_page: 10)
+    
+        @@tree = Tree.find_by(user_name: tree)
+        
+        # puts all.pluck(:common_name)
+    
         puts "Aren't these trees neat!"
         question = "Return to Main Menu?"
         output = %w(yes exit)
-
+    
         response = @@prompt.select(question, output)
-
+        
         if response == "yes"
             system "clear"
-            Application.application_runner
+            Application.main_menu
         else
             abort("Thanks for using TreeFind!!!!!!!!!")
         end
