@@ -39,6 +39,7 @@ class Tree < ActiveRecord::Base
         system "clear"
         puts "The #{@@tree.common_name} tree has the scientific name #{@@tree.sci_name}, and looks like this:"
         system("#{@@tree.tree_picture}")
-        puts ""
+        puts "The leaves look thusly:"
+        system("#{@@tree.leaf_picture}")
     end
 end

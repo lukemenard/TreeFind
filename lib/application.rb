@@ -12,9 +12,9 @@ def self.get_username
   tty_runner
   system "clear"
 
-  # Animation.title_animation
-
-  puts "Hello! Welcome to TreeFind!".white.on_green
+  Animation.title_animation
+  
+  puts "- - - - - - - - - - - Hello! Welcome to TreeFind! - - - - - - - - - - -"
   system("imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
 
