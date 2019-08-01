@@ -13,8 +13,8 @@ def self.get_username
   system "clear"
 
   Animation.title_animation
-  puts "" /$$$$$$$$                            /$$$$$$$$ /$$                 /$$""
-  puts "- - - - - - - - - - - Hello!! Welcome to TreeFind!! - - - - - - - - - - -"
+  
+  puts "- - - - - - - - - - - Hello! Welcome to TreeFind! - - - - - - - - - - -"
   system("imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
 
