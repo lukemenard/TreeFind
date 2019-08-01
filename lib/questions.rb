@@ -796,6 +796,17 @@ end
     response
     tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).where("flower_color = ?", @@flower_color).pluck(:common_name)
     puts tree_list
-  end
 
+    question = "You've reached the end. Return to the main menu?"
+    output = %w(yes exit)
+
+    response = @@prompt.select(question, output)
+
+    if response == "yes"
+        system "clear"
+        Application.application_runner
+    else
+        abort("Thanks for using TreeFind!!!!!!!!!")
+    end
+  end
 end
