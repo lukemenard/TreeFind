@@ -4,7 +4,7 @@ class Application
 # ____________TITLE_PAGE___________________________
 
 def self.tty_runner
-    @@prompt = TTY::Prompt.new(symbols:{marker: '🌲'}) 
+    @@prompt = TTY::Prompt.new(symbols:{marker: '🌲'})
     @@prompt
 end
 
@@ -13,9 +13,9 @@ def self.get_username
   system "clear"
 
   Animation.title_animation
-  
+
   puts "- - - - - - - - - - - Hello! Welcome to TreeFind! - - - - - - - - - - -"
-  system("imgcat ./lib/pic/Aspen-trees-path.jpg")
+  system("               imgcat ./lib/pic/Aspen-trees-path.jpg")
   puts ""
 
   question = "Have you logged in before?"

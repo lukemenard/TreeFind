@@ -81,7 +81,7 @@ class Question
       @@needles = "Scaled"
     when 6
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -191,7 +191,7 @@ def self.question_four_conifer
     @@bark_texture = "Peeling"
   when 6
 
-    question = "What do you want to do?"
+    question = "Do you want to save a tree to your favorites?"
     output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
     response = @@prompt.select(question, output, per_page:15)
@@ -243,7 +243,7 @@ def self.question_five_conifer
     @@bark_color = "red-brown"
   when 5
 
-    question = "What do you want to do?"
+    question = "Do you want to save a tree to your favorites?"
     output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
     response = @@prompt.select(question, output, per_page:15)
@@ -300,7 +300,7 @@ def self.question_six_conifer
     @@twigs = "Sticky"
   when 7
 
-    question = "What do you want to do?"
+    question = "Do you want to save a tree to your favorites?"
     output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
     response = @@prompt.select(question, output, per_page:15)
@@ -373,7 +373,7 @@ end
       @@leaves = "Basal"
     when 5
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -434,7 +434,7 @@ end
       @@leaf_shape = "Lobed"
     when 8
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -490,7 +490,7 @@ end
       @@bark_texture = "Peeling"
     when 6
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -542,7 +542,7 @@ end
       @@bark_color = "red-brown"
     when 5
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -599,7 +599,7 @@ end
       @@twigs_deciduous = "Sticky"
     when 7
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -655,7 +655,7 @@ end
       @@fruit = "Cones"
     when 7
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -711,7 +711,7 @@ end
       @@flower_shape = "Other"
     when 7
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
 
       response = @@prompt.select(question, output, per_page:15)
@@ -776,7 +776,7 @@ end
       @@flower_color = "Pink"
     when 10
 
-      question = "What do you want to do?"
+      question = "Do you want to save a tree to your favorites?"
       output = ["Return to Main Menu.", "Return to the question."]
 
       response = @@prompt.select(question, output)
