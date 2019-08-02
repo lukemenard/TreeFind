@@ -107,17 +107,16 @@ end
       "See a list of all available trees." => 2,
       "Add a tree to your list of favorites" => 3,
       "See your favorite trees" => 4,
-      "Learn how to use this app." => 5
+      "Learn how to use this app." => 5,
+      "User settings" => 6,
+      "Exit" => 7
     }
-    @@response = @@prompt.select(question, output).to_i
+    @@response = @@prompt.select(question, output, per_page: 7)
   end
 
   def self.main_menu_response(response)
     case response
-    # when 1
-    #   unless
-    #     "hold"
-    #   end
+    
     when 2
       Tree.all_trees
     when 3
@@ -126,7 +125,43 @@ end
       Favorite.show_favorites
     when 5
       Help.main_menu_help
+    when 6
+      user_settings
+    when 7
+      abort("Thanks for using TreeFind!!!!!!!!!")
     end
+  end
+
+  def self.user_settings
+    tty_runner
+    question = "What would you like to do?"
+
+    output = {
+        "Edit user name." => 1,
+        "Delete user." => 2,
+    }
+
+    response = @@prompt.select(question, output)
+
+      if response == 1
+          update_user_name
+          application_runner
+      else
+          delete_user
+          get_username
+          application_runner        
+      end    
+  end
+
+  def self.delete_user
+    Favorite.where("user_id = ?", @@user.id).destroy_all
+    User.where("id = ?", @@user.id).destroy_all
+  end
+
+  def self.update_user_name
+      user = @@prompt.ask("What is your name?", default: ENV["USER"])
+      User.update(user_name: user)
+      @@user = User.find_by(user_name: user)
   end
 
 

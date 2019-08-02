@@ -10,5 +10,9 @@ require_all './lib'
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/trees.db')
 ActiveRecord::Base.logger = nil
 
-Application.get_username
-Application.application_runner
+def app
+    Application.get_username
+    Application.application_runner
+end
+
+app
