@@ -33,7 +33,7 @@ Step 4: Install Ruby:
     •	If installed, you will see a version such as "ruby 2.6.1p33"
     •	If not installed, see https://www.ruby-lang.org/en/documentation/installation/ for installation instructions
 
-Step 5: Clone the project onto your device and navigate you working directory to the cloned TreeFind_Final folder
+Step 5: Clone the project onto your device and navigate your working directory to the cloned TreeFind_Final folder
 
 Step 6: Run "bundle install" from ITerm2 (or from your terminal) to install required ruby gems
 
@@ -59,6 +59,7 @@ From the TreeFind main menu, you can do any of the following:
     •	Add a tree to your personal list of favorites
     •	See your personal list of favorite trees
     •	Learn how to use the app
+    •	User Settings
 
 Step 3:  Identify a tree
     1.	Answer a series of questions about your tree to narrow the list of available trees
@@ -83,6 +84,12 @@ Step 6: See your personal list of favorite trees
 
 Step 7: Learn how to use the app
     1.	Outputs instructions and information on how to use TreeFind
+    
+Step 8: User Settings
+    1.	Edit user name allows a user to change their user name.
+    2.   Delete user deletes user account and all favorited trees.
+    
+    
 
 __________________________________________________Limitations and Next Steps________________________________________________________
 
