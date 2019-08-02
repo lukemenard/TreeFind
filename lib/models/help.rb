@@ -23,6 +23,7 @@ class Help
         •	Add a tree to your personal list of favorites
         •	See your personal list of favorite trees
         •	Learn how to use the app
+        •	User settings
 
     Step 3:  Identify a tree
         1.	Answer a series of questions about your tree to narrow the list of available trees
@@ -43,7 +44,11 @@ class Help
         1.	Outputs a list of all the trees your saved to your favorites via Step 5
 
     Step 7: Learn how to use the app
-        1.	Outputs instructions and information on how to use TreeFind"
+        1.	Outputs instructions and information on how to use TreeFind
+        
+    Step 8: User settings
+        1.	Edit user name allows a user to change their user name.
+        2.      Delete user deletes user account and all favorited trees."
 
     question = "Return to Main Menu?"
     output = %w(yes exit)
