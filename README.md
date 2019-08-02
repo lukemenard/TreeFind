@@ -1,4 +1,6 @@
-$$$$$$$$\                            $$$$$$$$\ $$\                 $$\ 
+
+
+$$$$$$$$\                            $$$$$$$$\ $$\                 $$\
 \__$$  __|                           $$  _____|\__|                $$ |
    $$ | $$$$$$\   $$$$$$\   $$$$$$\  $$ |      $$\ $$$$$$$\   $$$$$$$ |
    $$ |$$  __$$\ $$  __$$\ $$  __$$\ $$$$$\    $$ |$$  __$$\ $$  __$$ |
@@ -28,6 +30,7 @@ Step 3:  Identify a tree
 3.	Save any of the identified trees to your personal list of favorites
 
 An example workflow for navigating this feature of TreeFind is as follows:
+![Unsplash workflow](https://github.com/lukemenard/TreeFind_Final/blob/master/lib/pic/Tree%20ID%20CLI%20Project%20Workflow.png)
 
 Step 4: See a list of all trees available in the TreeFind database
 1.	Scroll through a list of all trees available in the TreeFind database
