@@ -57,6 +57,8 @@ class Question
     puts ""
     puts "The way a conifer's needles are arranged can help you identify the species."
     puts "A conifer can have individual or clustered needles, called fasciles."
+    system("imgcat ./lib/pic/question_two_conifer/fascicle 2.jpg", "imgcat ./lib/pic/question_two_conifer/fascicle 5.jpg")
+
     puts "Needles can also be flat or sharp."
     puts ""
     question = "What needle arrangement does your tree have?"
