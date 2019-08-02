@@ -408,7 +408,7 @@ quaking_aspen = Tree.create(common_name: "Quaking Aspen",
                     flower_shape: "Inconspicuous",
                     flower_color: "White",
                     habitat: "foothills/montane",
-                    leaf_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg",
+                    leaf_picture: "imgcat ./lib/pic/Aspen-leavestall-225x300.jpg",
                     tree_picture: "imgcat ./lib/pic/Aspen-trees-path.jpg"   
                 )   
                     

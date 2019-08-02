@@ -57,9 +57,17 @@ class Question
     puts ""
     puts "The way a conifer's needles are arranged can help you identify the species."
     puts "A conifer can have individual or clustered needles, called fasciles."
-    system("imgcat ./lib/pic/question_two_conifer/fascicle 2.jpg", "imgcat ./lib/pic/question_two_conifer/fascicle 5.jpg")
-
-    puts "Needles can also be flat or sharp."
+    system("imgcat ./lib/pic/question_two_conifer/fascicle2.jpg")
+    system ("imgcat ./lib/pic/question_two_conifer/fascicle5.jpg")
+    puts ""
+    puts "Needles can also be flat,"
+    system ("imgcat ./lib/pic/question_two_conifer/flat_needle.jpg")
+    puts ""
+    puts "sharp,"
+    system ("imgcat ./lib/pic/question_two_conifer/needle_sharp.jpg")
+    puts ""
+    puts "or scaled."
+    system ("imgcat ./lib/pic/question_two_conifer/needle_scaled.jpg")
     puts ""
     question = "What needle arrangement does your tree have?"
     output = {
@@ -86,16 +94,13 @@ class Question
     when 6
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -138,7 +143,7 @@ def self.question_three_conifer
   when 4
 
     question = "Do you want to save a tree to your favorites?"
-    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+    output = [tree_list, "No. Return to Main Menu."]
 
     response = @@prompt.select(question, output, per_page:15)
 
@@ -196,7 +201,7 @@ def self.question_four_conifer
   when 6
 
     question = "Do you want to save a tree to your favorites?"
-    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+    output = [tree_list, "No. Return to Main Menu."]
 
     response = @@prompt.select(question, output, per_page:15)
 
@@ -248,7 +253,7 @@ def self.question_five_conifer
   when 5
 
     question = "Do you want to save a tree to your favorites?"
-    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+    output = [tree_list, "No. Return to Main Menu."]
 
     response = @@prompt.select(question, output, per_page:15)
 
@@ -305,7 +310,7 @@ def self.question_six_conifer
   when 7
 
     question = "Do you want to save a tree to your favorites?"
-    output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+    output = [tree_list, "No. Return to Main Menu."]
 
     response = @@prompt.select(question, output, per_page:15)
 
@@ -325,16 +330,18 @@ def self.question_six_conifer
   tree_list = Tree.all.where("coniferous_deciduous = ?", @@type).where("needle_shape = ?", @@needles).where("cone_type = ?", @@cones).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs).pluck(:common_name)
   puts tree_list
 
-  question = "You've reached the end. Return to the main menu?"
-  output = %w(yes exit)
+  question = "You've reached the end. Add the tree to your favorites?"
+  output = [tree_list, "Return to main menu", "Exit"]
 
   response = @@prompt.select(question, output)
 
-  if response == "yes"
+  if response == "Return to main menu"
       system "clear"
       Application.application_runner
-  else
+  elsif response == "Exit"
       abort("Thanks for using TreeFind!!!!!!!!!")
+  else
+    Favorite.add_to_favorites_from_list(response)
   end
 end
 
@@ -356,6 +363,19 @@ end
     puts ""
     puts "The way a tree's leaves are arranged can help you identify the species."
     puts ""
+    puts "Leaves can be opposite,"
+    system("imgcat ./lib/pic/question_two_deciduous/opposite.jpg")
+    puts ""
+    puts "alternate,"
+    system("imgcat ./lib/pic/question_two_deciduous/alternate.jpg")
+    puts ""
+    puts "whorled,"
+    system("imgcat ./lib/pic/question_two_deciduous/whorled.jpg")
+    puts ""
+    puts "or basal."
+    system("imgcat ./lib/pic/question_two_deciduous/basal.jpg")
+    puts ""
+
     question = "What leaf arrangement does your tree have?"
     output = {
       "Leaves are opposite." => 1,
@@ -378,16 +398,13 @@ end
     when 5
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -408,6 +425,29 @@ end
 
     puts "Your leaves are #{@@leaves}! There #{tree_count} trees available."
     puts "The shape of a leaf can also be very distinctive."
+    puts ""
+    puts "Leaves can be pinnate,"
+    system("imgcat ./lib/pic/question_three_deciduous/pinnate.jpg")
+    puts ""
+    puts "narrow,"
+    system("imgcat ./lib/pic/question_three_deciduous/narrow.jpg")
+    puts ""
+    puts "deltoid,"
+    system("imgcat ./lib/pic/question_three_deciduous/deltoid.jpg")
+    puts ""
+    puts "orbicular"
+    system("imgcat ./lib/pic/question_three_deciduous/orbicular.jpg")
+    puts ""
+    puts "oblanceolate"
+    system("imgcat ./lib/pic/question_three_deciduous/oblanceolate.jpg")
+    puts ""
+    puts "palmate,"
+    system("imgcat ./lib/pic/question_three_deciduous/palmate.jpg")
+    puts ""
+    puts "or lobed."
+    system("imgcat ./lib/pic/question_three_deciduous/lobed.jpg")
+    puts ""
+
     question =  "What shape are your leaves?"
     output = {
       "Leaves are pinnate." => 1,
@@ -439,16 +479,13 @@ end
     when 8
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -495,16 +532,13 @@ end
     when 6
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -547,16 +581,13 @@ end
     when 5
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -604,16 +635,13 @@ end
     when 7
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -632,6 +660,27 @@ end
     tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).pluck(:common_name)
 
     puts "Your twigs are #{@@twigs_deciduous}! There are #{tree_count} trees available."
+    puts ""
+    puts "Deciduous trees can have a variety of fruit and seeds. They can be capsules,"
+    system("imgcat ./lib/pic/question_seven_deciduous/capsule.jpg")
+    puts ""
+    puts "dry seed,"
+    system("imgcat ./lib/pic/question_seven_deciduous/dry_seed.jpg")
+    puts ""
+    puts "acorns,"
+    system("imgcat ./lib/pic/question_seven_deciduous/acorn.jpg")
+    puts ""
+    puts "samaras,"
+    system("imgcat ./lib/pic/question_seven_deciduous/samara.jpg")
+    puts ""
+    puts "fleshy fruit,"
+    system("imgcat ./lib/pic/question_seven_deciduous/fleshy.jpg")
+    puts ""
+    puts "or cones."
+    system("imgcat ./lib/pic/question_seven_deciduous/cones.jpg")
+    puts ""
+
+
     question =  "What type of fruit does the tree have?"
     output = {
       "The tree has capsules." => 1,
@@ -660,16 +709,13 @@ end
     when 7
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -716,16 +762,13 @@ end
     when 7
 
       question = "Do you want to save a tree to your favorites?"
-      output = [tree_list, "No. Return to Main Menu.", "No. Return to the question."]
+      output = [tree_list, "No. Return to Main Menu."]
 
       response = @@prompt.select(question, output, per_page:15)
 
       if response == "Return to Main Menu."
           system "clear"
           Application.application_runner
-      elsif response == "No. Return to the question."
-          system "clear"
-          question_three_conifer
       else
         Favorite.add_to_favorites_from_list(response)
       end
@@ -799,16 +842,18 @@ end
     tree_list = Tree.all.where("coniferous_deciduous = 'Deciduous'").where("leaf_arrangement = ?", @@leaves).where("leaf_shape = ?", @@leaf_shape).where("bark_texture = ?", @@bark_texture).where("bark_color = ?", @@bark_color).where("twig_texture = ?", @@twigs_deciduous).where("fruit = ?", @@fruit).where("flower_shape = ?", @@flower_shape).where("flower_color = ?", @@flower_color).pluck(:common_name)
     puts tree_list
 
-    question = "You've reached the end. Return to the main menu?"
-    output = %w(yes exit)
+    question = "You've reached the end. Add the tree to your favorites?"
+    output = [tree_list, "Return to main menu", "Exit"]
 
     response = @@prompt.select(question, output)
 
-    if response == "yes"
+    if response == "Return to main menu"
         system "clear"
         Application.application_runner
-    else
+    elsif response == "Exit"
         abort("Thanks for using TreeFind!!!!!!!!!")
+    else
+      Favorite.add_to_favorites_from_list(response)
     end
   end
 end
