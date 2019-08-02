@@ -98,6 +98,7 @@ end
 # ____________MAIN_MENU___________________________
 
   def self.main_menu
+    system "clear"
     tty_runner
 
     question = "Hello, #{@@user.user_name}! What would you like to do?"
