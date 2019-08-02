@@ -91,7 +91,7 @@ Step 8: User Settings
     
     
 
-__________________________________________________Limitations and Next Steps________________________________________________________
+________________________________________________Limitations and Next Steps________________________________________________________
 
 This tool was constructed as a coding exercise by students at the Flatiron School. As a result:
     1. Data may not be scientifically accurate
@@ -103,3 +103,8 @@ TreeFind seeds from a constructed list of 20 common Colorado trees. As a result:
     1. This tool should not be used outside of Colorado
     2. The functionality of the "identify a tree function" is very limited in scope
 Next Steps: call to an API that contains a large collection of tree phenological/ecological data and tailor questions in the workflow to available data
+
+
+________________________________________________Informational Video!!________________________________________________________
+
+https://youtu.be/qtkvR6ZAhPM
