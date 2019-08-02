@@ -27,6 +27,30 @@ blue_spruce = Tree.create(common_name: "Blue Spruce",
                     leaf_picture: "imgcat ./lib/pic/blue-spruce-leaftall.jpg",
                     tree_picture: "imgcat ./lib/pic/blue-spruce-tree.jpg"
                     )         
+
+blue_spruce2 = Tree.create(common_name: "Blue Sprucey", 
+                    common_fam_name: "Pine", 
+                    coniferous_deciduous: "Coniferous", 
+                    sci_name: "Picea pungens", 
+                    bark_color: "gray-brown",
+                    bark_texture: "Furrowed",
+                    leaf_type: "Needle",
+                    leaf_arrangement:"none",
+                    leaf_shape:"none",
+                    needle_shape: "Sharp",
+                    cone_type: "Woody",
+                    fruit: "Cone",
+                    min_elevation: 6700,
+                    max_elevation: 11500,
+                    min_height: 70,
+                    max_height: 115,
+                    twig_texture: "Rough",
+                    flower_shape:"none",
+                    flower_color:"none",
+                    habitat: "foothills/montane",
+                    leaf_picture: "imgcat ./lib/pic/blue-spruce-leaftall.jpg",
+                    tree_picture: "imgcat ./lib/pic/blue-spruce-tree.jpg"
+                    )                       
                     
 boxelder = Tree.create(common_name: "Boxelder", 
                     common_fam_name: "Maple", 
@@ -50,7 +74,7 @@ boxelder = Tree.create(common_name: "Boxelder",
                     habitat: "plains/foothills",
                     leaf_picture: "imgcat ./lib/pic/BoxelderLeaves-225x300.jpg",
                     tree_picture: "imgcat ./lib/pic/BoxelderTree.jpg"
-                )        
+                    )        
                     
 bristlecone_pine = Tree.create(common_name: "Bristlecone Pine", 
                     common_fam_name: "Pine", 
@@ -74,7 +98,7 @@ bristlecone_pine = Tree.create(common_name: "Bristlecone Pine",
                     habitat: "montane/subalpine",
                     leaf_picture: "imgcat ./lib/pic/Bristlecone-leaf.jpg",
                     tree_picture: "imgcat ./lib/pic/Bristlecone-tree.jpg"
-                )       
+                    )       
                     
 chokecherry = Tree.create(common_name: "Chokecherry", 
                     common_fam_name: "Rose", 
@@ -98,7 +122,30 @@ chokecherry = Tree.create(common_name: "Chokecherry",
                     habitat: "plains/foothills",
                    leaf_picture: "imgcat ./lib/pic/ChokecherrydrupesLeaves.jpg",
                     tree_picture: "imgcat ./lib/pic/ChokecherryTree.jpg" 
-                )     
+                    )     
+chokecherry2 = Tree.create(common_name: "Chokecherry Tree", 
+                    common_fam_name: "Rose", 
+                    coniferous_deciduous: "Deciduous", 
+                    sci_name: "Prunus virginiana", 
+                    bark_color: "red-brown",
+                    bark_texture: "Bumpy",
+                    leaf_type: "Leaf",
+                    leaf_arrangement: "Alternate",
+                    leaf_shape: "Oblanceolate",
+                    needle_shape:"none",
+                    cone_type:"none",
+                    fruit: "Fleshy",
+                    min_elevation: 5000,
+                    max_elevation: 10000,
+                    min_height: 10,
+                    max_height: 15,
+                    twig_texture: "Smooth",
+                    flower_shape: "Star or Cross Shaped",
+                    flower_color: "Green",
+                    habitat: "plains/foothills",
+                    leaf_picture: "imgcat ./lib/pic/ChokecherrydrupesLeaves.jpg",
+                    tree_picture: "imgcat ./lib/pic/ChokecherryTree.jpg" 
+                    )                         
 
 douglas_fur = Tree.create(common_name: "Douglas Fir", 
                     common_fam_name: "Pine", 
@@ -122,7 +169,7 @@ douglas_fur = Tree.create(common_name: "Douglas Fir",
                     habitat: "foothills/montane",
                     leaf_picture: "imgcat ./lib/pic/Doug-Fir-cone.jpg",
                     tree_picture: "imgcat ./lib/pic/Douglas-fir-treerevised.jpg"   
-                )   
+                    )   
                     
 engelmann_spruce = Tree.create(common_name: "Engelmann Spruce", 
                     common_fam_name: "Pine", 
@@ -146,7 +193,7 @@ engelmann_spruce = Tree.create(common_name: "Engelmann Spruce",
                     habitat: "montane/subalpine",
                     leaf_picture: "imgcat ./lib/pic/Eng-Spruce-leaf.jpg",
                     tree_picture: "imgcat ./lib/pic/Eng-Spruce-tree.jpg" 
-                )     
+                    )     
 
 gambel_oak = Tree.create(common_name: "Gambel Oak", 
                     common_fam_name: "Oak", 
@@ -170,7 +217,7 @@ gambel_oak = Tree.create(common_name: "Gambel Oak",
                     habitat: "foothills",
                     leaf_picture: "imgcat ./lib/pic/GambelOakLeavestall-225x300.jpg",
                     tree_picture: "imgcat ./lib/pic/GambelOak.jpg" 
-                )     
+                    )     
 
 limber_pine = Tree.create(common_name: "Limber Pine", 
                     common_fam_name: "Pine", 

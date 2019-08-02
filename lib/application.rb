@@ -31,9 +31,16 @@ def self.get_username
     user = @@prompt.ask("What is your name?", default: ENV["USER"])
     User.create(user_name: user)
   else
+    if User.all.length == 0
+      puts "You must be mistaken!"
+      user = @@prompt.ask("What is your name?", default: ENV["USER"])
+      User.create(user_name: user)
+    else
     question = "Select your User Name:"
+    # binding.pry
     output = User.all.map(&:user_name)
     user = @@prompt.select(question, output)
+    end
   end
 
   @@user = User.find_by(user_name: user)
