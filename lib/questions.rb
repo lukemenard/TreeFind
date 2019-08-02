@@ -18,9 +18,11 @@ class Question
 
     puts "Conifers are trees with cones and needle-like or scale-like leaves that are typically evergreen (retain their leaves throughout the year)."
     puts "Pines and firs are conifers, for example."
+    system("imgcat ./lib/pic/Ponderosa-Leaftall-225x300.jpg")
     puts ""
     puts "Deciduous trees lose their leaves annually."
     puts "Maples and oaks are deciduous trees."
+    system("imgcat ./lib/pic/Plains-Cotton-Leaf.jpg")
     puts ""
     question = "Is your tree coniferous or deciduous?"
     output = {
