@@ -366,6 +366,19 @@ end
     puts ""
     puts "The way a tree's leaves are arranged can help you identify the species."
     puts ""
+    puts "Leaves can be opposite,"
+    system("imgcat ./lib/pic/question_two_deciduous/opposite.jpg")
+    puts ""
+    puts "alternate,"
+    system("imgcat ./lib/pic/question_two_deciduous/alternate.jpg")
+    puts ""
+    puts "whorled,"
+    system("imgcat ./lib/pic/question_two_deciduous/whorled.jpg")
+    puts ""
+    puts "or basal."
+    system("imgcat ./lib/pic/question_two_deciduous/basal.jpg")
+    puts ""
+
     question = "What leaf arrangement does your tree have?"
     output = {
       "Leaves are opposite." => 1,
@@ -418,6 +431,29 @@ end
 
     puts "Your leaves are #{@@leaves}! There #{tree_count} trees available."
     puts "The shape of a leaf can also be very distinctive."
+    puts ""
+    puts "Leaves can be pinnate,"
+    system("imgcat ./lib/pic/question_three_deciduous/pinnate.jpg")
+    puts ""
+    puts "narrow,"
+    system("imgcat ./lib/pic/question_three_deciduous/narrow.jpg")
+    puts ""
+    puts "deltoid,"
+    system("imgcat ./lib/pic/question_three_deciduous/deltoid.jpg")
+    puts ""
+    puts "orbicular"
+    system("imgcat ./lib/pic/question_three_deciduous/orbicular.jpg")
+    puts ""
+    puts "oblanceolate"
+    system("imgcat ./lib/pic/question_three_deciduous/oblanceolate.jpg")
+    puts ""
+    puts "palmate,"
+    system("imgcat ./lib/pic/question_three_deciduous/palmate.jpg")
+    puts ""
+    puts "or lobed."
+    system("imgcat ./lib/pic/question_three_deciduous/lobed.jpg")
+    puts ""
+
     question =  "What shape are your leaves?"
     output = {
       "Leaves are pinnate." => 1,
