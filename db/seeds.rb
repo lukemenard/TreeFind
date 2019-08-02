@@ -1,4 +1,7 @@
 Tree.destroy_all
+Tree.destroy_all
+
+guest = User.create(user_name: "Guest")
 
 
 blue_spruce = Tree.create(common_name: "Blue Spruce", 
