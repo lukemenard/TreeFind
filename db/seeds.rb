@@ -28,7 +28,7 @@ blue_spruce = Tree.create(common_name: "Blue Spruce",
                     tree_picture: "imgcat ./lib/pic/blue-spruce-tree.jpg"
                     )         
 
-blue_spruce2 = Tree.create(common_name: "Blue Sprucey", 
+blue_spruce2 = Tree.create(common_name: "Green Spruce", 
                     common_fam_name: "Pine", 
                     coniferous_deciduous: "Coniferous", 
                     sci_name: "Picea pungens", 
@@ -123,7 +123,7 @@ chokecherry = Tree.create(common_name: "Chokecherry",
                    leaf_picture: "imgcat ./lib/pic/ChokecherrydrupesLeaves.jpg",
                     tree_picture: "imgcat ./lib/pic/ChokecherryTree.jpg" 
                     )     
-chokecherry2 = Tree.create(common_name: "Chokecherry Tree", 
+chokecherry2 = Tree.create(common_name: "Stranglecherry", 
                     common_fam_name: "Rose", 
                     coniferous_deciduous: "Deciduous", 
                     sci_name: "Prunus virginiana", 
